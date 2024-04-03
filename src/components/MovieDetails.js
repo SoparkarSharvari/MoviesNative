@@ -20,7 +20,7 @@ const MovieDetails = props => {
       <ItemSection>
         <View style={styles.headerContainer}>
           <Text>Genre : {props.Title.Genre}</Text>
-          <Text>{props.Title.Title}</Text>
+          <Text>Movie Title : {props.Title.Title}</Text>
         </View>
       </ItemSection>
       <ItemSection>
