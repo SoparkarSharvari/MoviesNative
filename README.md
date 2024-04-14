@@ -59,21 +59,8 @@ Now that you have successfully run the app, let's modify it.
 
 You've successfully run and modified your React Native App. :partying_face:
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## ASSESMENT 
+| Section            | Screenshot                                                                                                  |
+|---------------------|-------------------------------------------------------------------------------------------------------------|
+| **ASSESMENT II**   | ![Assesment II Screenshot](https://github.com/SoparkarSharvari/MoviesNative/assets/116560487/195f8035-54bd-4f2f-9123-ad6966cd4054?) |
+| **ASSESMENT III**  | ![Assesment III Screenshot 1](https://github.com/SoparkarSharvari/MoviesNative/assets/116560487/e945d83f-72aa-40e7-ab8b-70ca8434d4c8?s=200) ![Assesment III Screenshot 2](https://github.com/SoparkarSharvari/MoviesNative/assets/116560487/d5ac5b03-92e2-4b98-bc15-d2a0de1f3f08?s=200) |
