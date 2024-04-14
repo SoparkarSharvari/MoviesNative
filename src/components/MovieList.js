@@ -1,5 +1,5 @@
 import {ScrollView, Text, View} from 'react-native';
-import React, {Component} from 'react';
+import React, {Componen, useState, useEffect} from 'react';
 import axios from 'axios';
 import MovieDetails from './MovieDetails';
 // const CarList = props => {
@@ -127,17 +127,57 @@ import MovieDetails from './MovieDetails';
 // };
 // export default MovieList;
 
-class MovieList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cars: [], // Initialize state to hold fetched data
-      loading: true, // Add loading state
-    };
-  }
+// class MovieList extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       cars: [], // Initialize state to hold fetched data
+//       loading: true, // Add loading state
+//     };
+//   }
+
+//   // Life cycle method
+//   componentDidMount() {
+//     axios
+//       .get(
+//         'https://my-json-server.typicode.com/SoparkarSharvari/Movies/movies',
+//         {
+//           maxContentLength: 1000000, // Correctly placed inside the configuration object
+//         },
+//       )
+//       .then(response => {
+//         this.setState({movies: response.data, loading: false});
+//       })
+//       .catch(error => {
+//         console.error('Error fetching data:', error);
+//       });
+//   }
+
+//   renderList = () => {
+//     return this.state.movies.map(Title => {
+//       return <MovieDetails key={Title.id} Title={Title} />;
+//     });
+//   };
+
+//   render() {
+//     return (
+//       <ScrollView>
+//         {this.state.loading ? <Text>Loading...</Text> : this.renderList()}
+//       </ScrollView>
+//     );
+//   }
+// }
+
+// export default MovieList;
+
+/// functional components
+
+const MovieList = () => {
+  const [movies, setMovies] = useState([]); // Initialize state to hold fetched data
+  const [loading, setLoading] = useState(true); // Add loading state
 
   // Life cycle method
-  componentDidMount() {
+  useEffect(() => {
     axios
       .get(
         'https://my-json-server.typicode.com/SoparkarSharvari/Movies/movies',
@@ -146,26 +186,23 @@ class MovieList extends Component {
         },
       )
       .then(response => {
-        this.setState({movies: response.data, loading: false});
+        setMovies(response.data);
+        setLoading(false);
       })
       .catch(error => {
         console.error('Error fetching data:', error);
       });
-  }
+  }, []); // Empty dependency array to run effect only once on component mount
 
-  renderList = () => {
-    return this.state.movies.map(Title => {
-      return <MovieDetails key={Title.id} Title={Title} />;
+  const renderList = () => {
+    return movies.map(movie => {
+      return <MovieDetails key={movie.id} movie={movie} />;
     });
   };
 
-  render() {
-    return (
-      <ScrollView>
-        {this.state.loading ? <Text>Loading...</Text> : this.renderList()}
-      </ScrollView>
-    );
-  }
-}
+  return (
+    <ScrollView>{loading ? <Text>Loading...</Text> : renderList()}</ScrollView>
+  );
+};
 
 export default MovieList;

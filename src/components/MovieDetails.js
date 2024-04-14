@@ -4,16 +4,15 @@ import axios from 'axios';
 import ItemSection from './ItemSection';
 import Item from './Item';
 import {Button, Linking} from 'react-native';
-// import CustomButton from './CustomButton';
+import CustomButton from './CustomButton';
 
 const MovieDetails = props => {
   // const {headerContainer} = styles;
   const handleButtonClick = () => {
-    if (props.Title.model[0].url) {
-      Linking.openURL(props.brand.Images[0].url);
-    } else {
-      console.warn('URL is not provided.');
-    }
+    const movieTitle = props.Title.Title;
+    const searchQuery = encodeURIComponent(movieTitle);
+    const googleSearchUrl = `https://www.google.com/search?q=${searchQuery}`;
+    Linking.openURL(googleSearchUrl);
   };
   return (
     <Item>
@@ -26,14 +25,14 @@ const MovieDetails = props => {
       <ItemSection>
         <Image style={styles.image} source={{uri: props.Title.Images[0]}} />
       </ItemSection>
-      {/* <ItemSection>
+      <ItemSection>
         {/* <Button title="Vist the Website" onPress={handleButtonClick} /> */}
-      {/* <CustomButton */}
-      {/* title="Visit the Website" */}
-      {/* onPress={handleButtonClick} */}
-      {/* style={styles.button} */}
-      {/* /> */}
-      {/* </ItemSection>  */}
+        <CustomButton
+          title="Visit the Website"
+          onPress={handleButtonClick}
+          style={styles.button}
+        />
+      </ItemSection>
     </Item>
   );
 };
